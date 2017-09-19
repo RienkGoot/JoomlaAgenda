@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS `#__agenda_events` (
+	`id` int(10) NOT NULL AUTO_INCREMENT,
+	`title` VARCHAR(50) NOT NULL,
+	`description` VARCHAR(255) NOT NULL,
+	`start_date` DATE NOT NULL,
+	`end_date` DATE NOT NULL,
+	`start_time` TIME NOT NULL,
+	`end_time` TIME NOT NULL,
+	`location` VARCHAR(50) NOT NULL,
+	`event_type` VARCHAR(50) NOT NULL,
+	`event_type_color` VARCHAR(50) NOT NULL,
+	`event_type_font` VARCHAR(50) NOT NULL,
+	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
