@@ -1,0 +1,14 @@
+.events{
+    word-wrap: break-word;
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 45px;
+    border-bottom: 1px #efefef solid;
+}
+.centermsg{
+    font-size: 18px;
+    text-align: center;
+}
+.right-link{
+    float: right;
+}
