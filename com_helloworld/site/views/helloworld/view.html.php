@@ -13,8 +13,11 @@ class HelloWorldViewHelloWorld extends JViewLegacy
 	// Overwriting JView display method
 	function display($tpl = null)
 	{
-		// Assign data to the view
-		$this->msg = $this->get('Msg');
+
+        // Get data from the model
+        $items  = $this->get('Items');
+        // Assign data to the view
+        $this->items      = $items;
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -23,6 +26,8 @@ class HelloWorldViewHelloWorld extends JViewLegacy
 
 			return false;
 		}
+
+
 		// Display the view
 		parent::display($tpl);
 	}

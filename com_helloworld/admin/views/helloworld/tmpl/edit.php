@@ -2,9 +2,10 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 JHtml::_('behavior.tooltip');
+JHtml::_('behavior.formvalidator');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id=' . (int) $this->item->id); ?>"
-    method="post" name="adminForm" id="adminForm">
+    method="post" name="adminForm" id="adminForm" class="form-validate">
     <div class="form-horizontal">
         <fieldset class="adminform">
             <div class="row-fluid">

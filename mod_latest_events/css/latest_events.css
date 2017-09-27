@@ -1,14 +1,13 @@
-.events{
-    word-wrap: break-word;
-    list-style-type: none;
-    font-size: 18px;
-    line-height: 45px;
-    border-bottom: 1px #efefef solid;
+.triangle-topright {
+    border-top: 50px solid red;
+    border-left: 50px solid transparent;
 }
-.centermsg{
-    font-size: 18px;
-    text-align: center;
+.fixed-rectangle {
+    background-color: #ffffff;
+    border: 1px solid #dadada;
+    margin-bottom: 7px;
 }
-.right-link{
-    float: right;
+.event-text{
+    font-size: 18px;
+    margin: 15px 0px 15px 18px;
 }

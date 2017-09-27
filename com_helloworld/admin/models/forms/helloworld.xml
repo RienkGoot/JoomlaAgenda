@@ -51,7 +51,6 @@
 			   	label="Einddatum"
 			   	description="Einddatum van het evenement"
 			   	class="input-small"
-			   	required="true"
 			   	filter="user_utc"
 			   	showtime="false"
 			   	todaybutton="true"
@@ -74,7 +73,6 @@
 				size="10"
 				hint=".. : .."
 				/>
-
 		<field
 				name="event_type"
 				type="text"
@@ -86,18 +84,20 @@
 				name="event_type_color"
 				type="color"
 				default="#000"
+				validate="color"
 				label="Type kleur"
 				description="Kleur van het evenement type"
 				/>
 		<field
 				name="event_type_font"
-				type="list" default=""
+				type="list"
+				validate="options"
 				label="Type lettergrootte"
 				description="Lettergrootte van het evenement type"
 				>
-			<option value="klein">Klein</option>
-			<option value="normaal">Normaal</option>
-			<option value="groot">Groot</option>
+			<option value="16px">Klein</option>
+			<option value="18px">Normaal</option>
+			<option value="21px">Groot</option>
 		</field>
 
 	</fieldset>
