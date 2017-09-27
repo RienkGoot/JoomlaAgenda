@@ -20,7 +20,7 @@ class HelloWorldController extends JControllerLegacy
      */
     function display($cachable = false, $urlparams = false)
     {
-        $document = JFactory::getDocument();
+
 
         // set default view if not set
         $input = JFactory::getApplication()->input;
@@ -29,6 +29,5 @@ class HelloWorldController extends JControllerLegacy
         // call parent behavior
         parent::display($cachable);
 
-        return $this;
     }
 }

@@ -5,30 +5,57 @@ defined('_JEXEC') or die('Restricted access');
 <?php /*foreach ($this->items as $i => $item) {
 
 
-*/?><!--
-<div class="fixed-rectangle">
-        <?php /*echo $item->title; */?>
-        <i class="triangle-topright pull-right"></i>
-    <div class="event-text">
-    <p>Evenement 1</p>
-    <p>Datum: 27-09-17</p>
-    <button type="button" class="btn btn-default" data-dismiss="modal">Meer info..</button>
-    </div>
-</div>
---><?php
-/*
-}
 */?>
+<?php
+if(!empty($this->items)) {
+    foreach ($this->items as $i => $event) { ?>
+        <div class="fixed-rectangle">
 
-<?php if(empty($this->items)) {
-    echo "leeg items";
-}
-else{
-    foreach($this->items as $i => $item){
-        echo $item->title;
-    }
+            <i class="triangle-topright pull-right" style="border-top-color:<?php echo $event->event_type_color; ?> "></i>
+            <div class="event-text" style="font-size:<?php echo $event->event_type_font; ?> ">
+                <p><?php echo $event->title; ?></p>
+                <p><?php echo date('d-m-y', strtotime($event->start_date)); ?></p>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#eventModal<?php echo $event->id; ?>">Meer info..</button>
+            </div>
+
+        </div>
+    <?php }
 }
 ?>
+
+<?php
+
+/*if(empty($this->items)) {
+    echo '<p class="centermsg">Geen evenementen</p>';
+}*/
+
+
+
+    foreach($this->items as $event){ ?>
+    <!-- Modal -->
+    <div id="eventModal<?php echo $event->id; ?>" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3><?php echo $event->title; ?></h3>
+                    <p>Startdatum: <?php echo date('d-m-y',strtotime($event->start_date)); ?></p>
+                    <p>Einddatum: <?php echo date('d-m-y',strtotime($event->end_date)); ?></p>
+                    <p>Tijd: <?php echo date('h:i',strtotime($event->start_time)) ?> - <?php echo date('h:i',strtotime($event->end_time)) ?></p>
+                    <p>Locatie: <?php echo $event->location; ?></p>
+                    <p>Type: <?php echo $event->event_type; ?></p>
+                    <p>Omschrijving: <?php echo $event->description; ?></p>
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php } ?>
+
+
 <style>
 
     .triangle-topright {
@@ -38,6 +65,7 @@ else{
     .fixed-rectangle {
         background-color: #ffffff;
         border: 1px solid #dadada;
+        margin-bottom: 7px;
     }
     .event-text{
         font-size: 18px;
