@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset
+            name="greetings"
+            label="Configuratie"
+            description="Configureer hier de evenementen component."
+    >
+        <field name="max_events" type="number" default="10" label="Max aantal evenementen:" description="Maximaal aantal evenementen in de lijst." step="1" />
+        <field name="no_events" type="textarea" label="Geen evenement bericht:" default="Momenteel geen evenementen." description="Standaard bericht wanneer er geen evenementen zijn" />
+
+    </fieldset>
+    <fieldset
+            name="permissions"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            description="JCONFIG_PERMISSIONS_DESC"
+    >
+        <field
+                name="rules"
+                type="rules"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                class="inputbox"
+                validate="rules"
+                filter="rules"
+                component="com_event"
+                section="component"
+        />
+    </fieldset>
+</config>

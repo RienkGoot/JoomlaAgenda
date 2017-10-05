@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
-    <name>Joomla Agenda - Actuele evenementen</name>
+    <name>Actuele evenementen</name>
     <author>Rienk van der Goot</author>
     <creationDate>Sept 2017</creationDate>
     <authorEmail>rienk_goot@hotmail.com</authorEmail>
@@ -19,14 +19,8 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="event_time" type="radio" class="btn-group"  default="2" label="Actualiteit per:" description="De actualiteit van de lijst met evenementen">
-                    <option value="1">Dag</option>
-                    <option value="2">Week</option>
-                    <option value="3">Maand</option>
-                </field>
                 <field name="max_events" type="number" default="10" label="Max aantal evenementen:" description="Maximaal aantal evenementen in de lijst." step="1" />
                 <field name="no_events" type="textarea" label="Geen evenement bericht:" default="Momenteel geen evenementen." description="Standaard bericht wanneer er geen evenementen zijn" />
-                <field name="moduleclass_sfx" type="text" label="Module Class Suffix:" description="Geef CSS class op" />
             </fieldset>
         </fields>
     </config>

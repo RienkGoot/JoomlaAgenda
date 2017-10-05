@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field
+				name="id"
+				type="hidden"
+				/>
+		<field
+				name="title"
+				type="text"
+				label="Titel:"
+				required="true"
+				description="Titel of naam van het evenement"
+				size="10"
+				/>
+		<field
+				name="description"
+				type="textarea"
+				required="true"
+				label="Omschrijving:"
+				description="Omschrijving van het evenement"
+				rows="10"
+				cols="5"
+				/>
+		<field
+				name="location"
+				type="text"
+				default=""
+				label="Locatie:"
+				required="true"
+				description="Locatie van het evenement"
+				size="10"
+				/>
+		<field
+				name="start_date"
+				type="calendar"
+				default="NOW"
+				label="Startdatum"
+				description="Startdatum van het evenement"
+				class="input-small"
+				required="true"
+				filter="user_utc"
+				showtime="false"
+				todaybutton="true"
+				filltable="false"
+				translateformat="true"
+				/>
+		<field
+				name="end_date"
+			   	type="calendar"
+			   	default="NOW"
+			   	label="Einddatum"
+			   	description="Einddatum van het evenement"
+			   	class="input-small"
+			   	filter="user_utc"
+			   	showtime="false"
+			   	todaybutton="true"
+			   	filltable="false"
+			   	translateformat="true"
+				/>
+		<field
+				name="start_time"
+				type="text"
+				label="Begin tijd:"
+				description="Begin tijd van het evenement"
+				size="10"
+				hint=".. : .."
+				/>
+		<field
+				name="end_time"
+				type="text"
+				label="Eind tijd:"
+				description="Eind tijd van het evenement"
+				size="10"
+				hint=".. : .."
+				/>
+		<field
+				name="event_type"
+				type="text"
+				label="Type:"
+				description="Type van het evenement"
+				size="10"
+				/>
+		<field
+				name="event_type_color"
+				type="color"
+				default="#000"
+				validate="color"
+				label="Type kleur"
+				description="Kleur van het evenement type"
+				/>
+		<field
+				name="event_type_font"
+				type="list"
+				validate="options"
+				default="18px"
+				label="Type lettergrootte"
+				description="Lettergrootte van het evenement type"
+				>
+			<option value="15px">Klein</option>
+			<option value="18px">Normaal</option>
+			<option value="21px">Groot</option>
+		</field>
+
+	</fieldset>
+</form>
