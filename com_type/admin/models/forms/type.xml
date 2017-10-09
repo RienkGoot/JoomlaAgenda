@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field
+				name="id"
+				type="hidden"
+				/>
+		<field
+				name="event_type"
+				type="text"
+				label="Type:"
+				description="Type van het evenement"
+				size="10"
+				required="true"
+		/>
+		<field
+				name="event_type_color"
+				type="color"
+				default="#000"
+				validate="color"
+				label="Type kleur"
+				description="Kleur van het evenement type"
+				required="true"
+		/>
+		<field
+				name="event_type_font"
+				type="list"
+				validate="options"
+				default="18px"
+				label="Type lettergrootte"
+				description="Lettergrootte van het evenement type"
+				required="true"
+		>
+			<option value="15px">Klein</option>
+			<option value="18px">Normaal</option>
+			<option value="21px">Groot</option>
+		</field>
+	</fieldset>
+</form>

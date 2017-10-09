@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2.0" method="upgrade">
+
+	<name>com_type</name>
+	<creationDate>Sept 2017</creationDate>
+	<author>Rienk van der Goot</author>
+	<authorEmail>rienk_goot@hotmail.com</authorEmail>
+	<authorUrl>http://www.rienkvandergoot.nl</authorUrl>
+	<version>1.0.0</version>
+	<description>Extensie om evenement types mee te beheren.</description>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>Evenementen types</menu>
+		<!-- Administration Main File Section -->
+		<files folder="admin">
+			<!-- Admin Main File Section -->
+			<filename>index.html</filename>
+			<filename>type.php</filename>
+			<filename>controller.php</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+			<!-- tables files section -->
+			<folder>tables</folder>
+			<!-- models files section -->
+			<folder>models</folder>
+			<!-- views files section -->
+			<folder>views</folder>
+			<!-- controllers files section -->
+			<folder>controllers</folder>
+		</files>
+	</administration>
+
+</extension>
