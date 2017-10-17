@@ -9,7 +9,10 @@ $listOrder     = $this->escape($this->filter_order);
 $listDirn      = $this->escape($this->filter_order_Dir);
 
 ?>
+<!-- Create type form -->
 <form action="index.php?option=com_type&view=types" method="post" id="adminForm" name="adminForm">
+
+    <!-- Search bar -->
     <div class="row-fluid">
         <div class="span6">
             <?php echo JText::_('Zoeken'); ?>
@@ -22,6 +25,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         </div>
     </div>
 
+    <!-- Type table-->
     <table class="table table-striped table-hover">
         <thead>
         <tr>
@@ -40,6 +44,8 @@ $listDirn      = $this->escape($this->filter_order_Dir);
             </th>
         </tr>
         </thead>
+
+        <!-- Display type data -->
         <tbody>
         <?php if (!empty($this->items)) : ?>
             <?php foreach ($this->items as $i => $row) :
@@ -54,7 +60,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                         <?php echo $row->event_type; ?>
                     </td>
                     <td>
-                        <?php echo $row->event_type_font; ?>
+                        <?php echo $row->event_type_font; ?>px
                     </td>
                     <td>
                         <div class="square" style="background-color:<?php echo $row->event_type_color; ?>;"></div>
@@ -77,6 +83,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
     <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"/>
     <?php echo JHtml::_('form.token'); ?>
 </form>
+
 <style>
     .square {
         width: 15px;

@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
     <fieldset
-            name="greetings"
-            label="Configuratie"
-            description="Configureer hier de evenementen component."
+            name="params"
+            label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"
     >
-        <field name="max_events" type="number" default="10" label="Max aantal evenementen:" description="Maximaal aantal evenementen in de lijst." step="1" />
-        <field name="no_events" type="textarea" label="Geen evenement bericht:" default="Momenteel geen evenementen." description="Standaard bericht wanneer er geen evenementen zijn" />
-
+        <field
+                name="max_events"
+                type="number" default="10"
+                label="Max aantal evenementen:"
+                description="Maximaal aantal evenementen in de lijst."
+                step="1"
+        />
+        <field
+                name="empty_events"
+                type="textarea"
+                label="Geen evenement bericht:"
+                default="Momenteel geen evenementen."
+                description="Standaard bericht wanneer er geen evenementen zijn"
+        />
+        <field
+                name="timezone_events"
+                type="timezone"
+                default="Europe/Amsterdam"
+                label="Tijdzone:"
+                description="Kies de tijdzone van uw locatie."
+        />
     </fieldset>
     <fieldset
             name="permissions"

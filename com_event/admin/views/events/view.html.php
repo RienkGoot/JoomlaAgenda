@@ -1,4 +1,12 @@
 <?php
+/**
+ * @package     com_event
+ * @author      Rienk
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -6,7 +14,10 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 
 /**
- * Class EventViewEvents
+ * View class, pass the events to view and add a toolbar if user is authorised.
+ *
+ * @subpackage  View
+ * @since       1.0
  */
 class EventViewEvents extends JViewLegacy
 {
@@ -14,7 +25,7 @@ class EventViewEvents extends JViewLegacy
      * Events view display method
      * @param string $tpl The name of the template file to parse; automatically searches through the template paths.
      * @return bool A string if successful, otherwise a JError object.
-     * @since 1.0
+     * @since 1.1
      */
     function display($tpl = null)
     {
@@ -62,8 +73,8 @@ class EventViewEvents extends JViewLegacy
     }
 
     /**
-     * Setting the toolbar
-     * @since 1.0
+     * Setting the toolbar if user is authorised
+     * @since 1.6
      */
     protected function addToolBar()
     {
@@ -98,7 +109,7 @@ class EventViewEvents extends JViewLegacy
     /**
      * Method to set up the document properties
      * @return void
-     * @since 1.0
+     * @since 1.6
      */
     protected function setDocument()
     {

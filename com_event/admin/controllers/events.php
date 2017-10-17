@@ -1,4 +1,12 @@
 <?php
+/**
+ * @package     com_event
+ * @author      Rienk
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -6,7 +14,10 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controlleradmin');
 
 /**
- * Class EventControllerEvents
+ * Controller class to get the event model.
+ *
+ * @subpackage  Controller
+ * @since       1.0
  */
 class EventControllerEvents extends JControllerAdmin
 {
@@ -17,7 +28,7 @@ class EventControllerEvents extends JControllerAdmin
      *
      * @return bool|JModelLegacy
      *
-     * @since 1.0
+     * @since 1.1
      */
 	public function getModel($name = 'Event', $prefix = 'EventModel')
 	{

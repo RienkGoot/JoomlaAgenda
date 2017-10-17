@@ -1,16 +1,28 @@
 <?php
+/**
+ * @package     com_event
+ * @author      Rienk
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 // import the Joomla modellist library
 jimport('joomla.application.component.modellist');
 
 /**
- * Class EventModelEvents
+ * Model class creates a constructor for the search field and build a query to get all events.
+ *
+ * @subpackage  Model
+ * @since       1.0
  */
+
 class EventModelEvents extends JModelList
 {
     /**
-     * Constructor.
+     * Constructor for the search filter
      * @param   array  $config  An optional associative array of configuration settings.
      * @see     JController
      * @since   1.6
@@ -29,9 +41,9 @@ class EventModelEvents extends JModelList
     }
 
     /**
-     *Method to build an SQL query to load the list data.
+     * Method to build an SQL query to load the list data.
      * @return JDatabaseQuery An SQL query
-     * @since 1.0
+     * @since 1.1
      */
 	protected function getListQuery()
 	{

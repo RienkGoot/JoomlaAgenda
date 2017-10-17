@@ -1,4 +1,12 @@
 <?php
+/**
+ * @package     com_type
+ * @author      Rienk
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -6,7 +14,10 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.modeladmin');
 
 /**
- * Class TypeModelType
+ * Model class creates a table object with the form data.
+ *
+ * @subpackage  Model
+ * @since       1.0
  */
 class TypeModelType extends JModelAdmin
 {

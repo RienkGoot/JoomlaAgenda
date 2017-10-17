@@ -1,4 +1,12 @@
 <?php
+/**
+ * @package     com_event
+ * @author      Rienk
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -6,7 +14,10 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
 
 /**
- * Class EventController
+ * Controller class, set the default view.
+ *
+ * @subpackage  Controller
+ * @since       1.0
  */
 class EventController extends JControllerLegacy
 {
@@ -15,8 +26,8 @@ class EventController extends JControllerLegacy
      *
      * @param bool $cachable
      * @param bool $urlparams
-     * @since 1.0
      * @return void
+     * @since 1.1
      */
 	function display($cachable = false, $urlparams = false)
 	{

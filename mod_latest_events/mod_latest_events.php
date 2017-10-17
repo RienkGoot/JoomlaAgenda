@@ -10,7 +10,10 @@ require_once dirname(__FILE__) . '/helper.php';
 $doc=JFactory::getDocument();
 $doc->addStyleSheet(JUri::root().'/modules/mod_latest_events/css/latest_events.css');
 
+// Get class and function
+$events = EventLatestHelper::getList($params);
+
 // Use bootstrap javascript framework
 JHtml::_('bootstrap.framework');
 
-require JModuleHelper::getLayoutPath('mod_latest_events');
+require JModuleHelper::getLayoutPath('mod_latest_events', $params->get('max_events'));

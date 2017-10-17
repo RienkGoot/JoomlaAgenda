@@ -1,12 +1,24 @@
 <?php
+/**
+ * @package     com_event
+ * @author      Rienk
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
 // import Joomla modelform library
 jimport('joomla.application.component.modeladmin');
 
+
 /**
- * Class EventModelEvent
+ * Model class creates a table object with the form data.
+ *
+ * @subpackage  Model
+ * @since       1.0
  */
 class EventModelEvent extends JModelAdmin
 {
@@ -16,7 +28,7 @@ class EventModelEvent extends JModelAdmin
 	 * @param       string  A prefix for the table class name. Optional.
 	 * @param       array   Configuration array for model. Optional.
 	 * @return      JTable  A database object
-	 * @since       1.0
+	 * @since       1.1
 	 */
 	public function getTable($type = 'Event', $prefix = 'EventTable', $config = array())
 	{
@@ -28,7 +40,7 @@ class EventModelEvent extends JModelAdmin
 	 * @param       array   $data     Data for the form.
 	 * @param       boolean $loadData True if the form is to load its own data (default case), false if not.
 	 * @return      mixed   A JForm object on success, false on failure
-	 * @since       1.0
+	 * @since       1.1
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
@@ -46,7 +58,7 @@ class EventModelEvent extends JModelAdmin
 	/**
 	 * Method to get the data that should be injected in the form.
 	 * @return      mixed   The data for the form.
-	 * @since       1.0
+	 * @since       1.1
 	 */
 	protected function loadFormData()
 	{

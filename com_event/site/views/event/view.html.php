@@ -1,4 +1,12 @@
 <?php
+/**
+ * @package     com_event
+ * @author      Rienk
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -6,17 +14,18 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 
 /**
- *  HTML View class for the events component
- * @package com_events
- * @since 1.0
+ * View class, pass the events to view.
+ *
+ * @subpackage  View
+ * @since       1.0
  */
 class EventViewEvent extends JViewLegacy
 {
     /**
      * Overwriting JView display method
      * @param null $tpl
-     * @since 1.0
      * @return bool
+     * @since 1.1
      */
     function display($tpl = null)
     {

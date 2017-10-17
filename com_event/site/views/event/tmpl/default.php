@@ -1,17 +1,31 @@
 <?php
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
+// Component helper for config params
+jimport('joomla.application.component.helper');
+
+// Get config message when there are no events
+$emptyEvents = JComponentHelper::getParams('com_event')->get('empty_events');
+
+// Get component css
+$document = JFactory::getDocument();
+$document->addStyleSheet(JUri::base() . 'media/com_event/css/style.css');
+
 // Check if there are events
-if(!empty($this->items)) {
+if(!empty($this->items))
+{
     // Load each event with modal
-    foreach ($this->items as $i => $event) { ?>
+    foreach ($this->items as $i => $event)
+    { ?>
         <!-- Event rectangle -->
         <div class="fixed-rectangle">
             <i class="triangle-topright pull-right" style="border-top-color:<?php echo $event->event_type_color; ?> "></i>
-            <div class="event-text" style="font-size:<?php echo $event->event_type_font; ?> ">
+            <div class="event-text" style="font-size:<?php echo $event->event_type_font; ?>px">
                 <p><?php echo $event->title; ?></p>
-                <p><?php echo date('d-m-y', strtotime($event->start_date)); ?></p>
+                <p><?php echo date('d-m-y', strtotime($event->start_date)); ?> - <?php echo date('d-m-y',strtotime($event->end_date));?></p>
+                <p><?php echo $event->location; ?></p>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#eventModal<?php echo $event->id; ?>">Meer info..</button>
             </div>
         </div>
@@ -37,25 +51,12 @@ if(!empty($this->items)) {
         </div>
     </div>
 
-<?php }}
-// else load message
+<?php
+    }
+}
+    // If empty show message
+    else
+    {
+        echo '<h3>' . $emptyEvents . '</h3>';
+    }
 ?>
-
-
-<style>
-
-    .triangle-topright {
-        border-top: 50px solid red;
-        border-left: 50px solid transparent;
-    }
-    .fixed-rectangle {
-        background-color: #ffffff;
-        border: 1px solid #dadada;
-        margin-bottom: 7px;
-    }
-    .event-text{
-        font-size: 18px;
-        margin: 15px 0px 15px 18px;
-    }
-</style>
-

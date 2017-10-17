@@ -1,11 +1,4 @@
 <?php
-/**
- * @package     Joomla.Administrator
- * @subpackage  com_helloworld
- *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted Access');
@@ -16,7 +9,10 @@ $listOrder     = $this->escape($this->filter_order);
 $listDirn      = $this->escape($this->filter_order_Dir);
 
 ?>
+<!-- Create event form -->
 <form action="index.php?option=com_event&view=events" method="post" id="adminForm" name="adminForm">
+
+    <!-- Search bar -->
     <div class="row-fluid">
         <div class="span6">
             <?php echo JText::_('Zoeken'); ?>
@@ -29,6 +25,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         </div>
     </div>
 
+    <!-- Event table -->
     <table class="table table-striped table-hover">
         <thead>
         <tr>
@@ -57,6 +54,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         </tr>
         </thead>
         <tbody>
+        <!-- Display event data -->
         <?php if (!empty($this->items)) : ?>
             <?php foreach ($this->items as $i => $row) :
                 $link = JRoute::_('index.php?option=com_event&task=event.edit&id=' . $row->id);
@@ -82,39 +80,17 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                         <?php echo $row->location; ?>
                     </td>
                     <td>
-                        <div class="square" style="background-color:<?php echo $row->event_type_color; ?>;">
-                            <div class="right-type">
-                            <?php echo $row->event_type; ?>
-                            </div>
-                        </div>
-
+                        <?php echo $row->event_type; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>
         </tbody>
-        <tfoot>
-        <tr>
-            <td colspan="5">
-                <?php echo $this->pagination->getListFooter(); ?>
-            </td>
-        </tr>
-        </tfoot>
     </table>
+	<?php echo $this->pagination->getListFooter(); ?>
     <input type="hidden" name="task" value=""/>
     <input type="hidden" name="boxchecked" value="0"/>
     <input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>"/>
     <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"/>
     <?php echo JHtml::_('form.token'); ?>
 </form>
-<style>
-    .square {
-        width: 15px;
-        height: 15px;
-        border: 1px solid black;
-        border-radius: 3px;
-    }
-    .right-type{
-        padding-left: 19px;
-    }
-</style>

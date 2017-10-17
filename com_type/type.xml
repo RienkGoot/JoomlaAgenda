@@ -30,21 +30,15 @@
 		<menu>Evenementen types</menu>
 		<!-- Administration Main File Section -->
 		<files folder="admin">
-			<!-- Admin Main File Section -->
 			<filename>index.html</filename>
 			<filename>type.php</filename>
 			<filename>controller.php</filename>
 			<filename>access.xml</filename>
 			<filename>config.xml</filename>
-			<!-- SQL files section -->
 			<folder>sql</folder>
-			<!-- tables files section -->
 			<folder>tables</folder>
-			<!-- models files section -->
 			<folder>models</folder>
-			<!-- views files section -->
 			<folder>views</folder>
-			<!-- controllers files section -->
 			<folder>controllers</folder>
 		</files>
 	</administration>

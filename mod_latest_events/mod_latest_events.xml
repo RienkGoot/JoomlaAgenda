@@ -7,6 +7,8 @@
     <authorUrl>www.rienkvandergoot.nl</authorUrl>
     <version>1.0.0</version>
     <description>Deze module laat de evenementen zien in een lijst.</description>
+
+    <!-- Main File Section -->
     <files>
         <filename>mod_latest_events.xml</filename>
         <filename module="mod_latest_events">mod_latest_events.php</filename>
@@ -16,12 +18,16 @@
         <filename>tmpl/index.html</filename>
         <folder>css</folder>
     </files>
+
+    <!-- Configuration Section -->
     <config>
         <fields name="params">
             <fieldset name="basic">
                 <field name="max_events" type="number" default="10" label="Max aantal evenementen:" description="Maximaal aantal evenementen in de lijst." step="1" />
                 <field name="no_events" type="textarea" label="Geen evenement bericht:" default="Momenteel geen evenementen." description="Standaard bericht wanneer er geen evenementen zijn" />
+                <field name="timezone_events" type="timezone" default="Europe/Amsterdam" label="Tijdzone:" description="Kies de tijdzone van uw locatie."/>
             </fieldset>
         </fields>
     </config>
+
 </extension>

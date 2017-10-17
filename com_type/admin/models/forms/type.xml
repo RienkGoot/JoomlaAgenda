@@ -26,14 +26,14 @@
 				name="event_type_font"
 				type="list"
 				validate="options"
-				default="18px"
+				default="18"
 				label="Type lettergrootte"
 				description="Lettergrootte van het evenement type"
 				required="true"
 		>
-			<option value="15px">Klein</option>
-			<option value="18px">Normaal</option>
-			<option value="21px">Groot</option>
+			<option value="15">Klein</option>
+			<option value="18">Normaal</option>
+			<option value="21">Groot</option>
 		</field>
 	</fieldset>
 </form>
